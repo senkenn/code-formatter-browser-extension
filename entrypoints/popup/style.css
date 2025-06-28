@@ -48,32 +48,23 @@ h1 {
   margin: 0 2px;
 }
 
-.shortcut-info span {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  color: #666;
-}
-
 .format-btn {
   width: 100%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 12px 20px;
-  cursor: pointer;
+  padding: 14px 20px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
   margin-bottom: 16px;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
 }
 
 .format-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .format-btn:active {
@@ -81,28 +72,28 @@ h1 {
 }
 
 .status {
-  text-align: center;
-  padding: 8px 12px;
+  padding: 12px;
   border-radius: 6px;
-  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
 .status.info {
-  background: #e7f3ff;
-  color: #0366d6;
-  border: 1px solid #b3d8ff;
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
 }
 
 .status.success {
-  background: #e6ffed;
-  color: #28a745;
-  border: 1px solid #b3dfb8;
+  background: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
 }
 
 .status.error {
   background: #ffebee;
-  color: #dc3545;
+  color: #c62828;
   border: 1px solid #ffcdd2;
 }
 
@@ -115,7 +106,7 @@ h1 {
 .instructions h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  color: #495057;
+  color: #333;
   font-size: 16px;
 }
 
@@ -128,5 +119,13 @@ h1 {
   margin-bottom: 8px;
   color: #666;
   font-size: 14px;
-  line-height: 1.4;
+}
+
+.instructions kbd {
+  background: #343a40;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 11px;
 }

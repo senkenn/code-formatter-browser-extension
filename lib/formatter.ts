@@ -1,11 +1,13 @@
 import * as prettier from "prettier";
-import * as parserTypeScript from "prettier/plugins/typescript";
 
 export async function formatCode(code: string): Promise<string> {
+  const parserTypeScript = await import("prettier/plugins/typescript");
+  const parserEstree = await import("prettier/plugins/estree");
+
   try {
     const formatted = await prettier.format(code, {
       parser: "typescript",
-      plugins: [parserTypeScript],
+      plugins: [parserTypeScript.default, parserEstree.default],
       semi: true,
       singleQuote: true,
       trailingComma: "es5",

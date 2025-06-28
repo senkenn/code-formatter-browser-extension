@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const formatButton = document.getElementById("formatButton");
   const statusDiv = document.getElementById("status");
 
+  // content scriptからのメッセージリスナー
+  chrome.runtime.onMessage.addListener((message) => {
+    if (message.action === "formatError") {
+      updateStatus(message.error, "error");
+    } else if (message.action === "formatSuccess") {
+      updateStatus("フォーマット完了！", "success");
+    }
+  });
+
   if (formatButton) {
     formatButton.addEventListener("click", async () => {
       try {
@@ -14,13 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (tab.id) {
           chrome.tabs.sendMessage(tab.id, { action: "formatCode" });
           updateStatus("コードをフォーマットしています...", "info");
-
-          setTimeout(() => {
-            updateStatus(
-              "フォーマット完了！Shift+Alt+Fでも実行できます",
-              "success",
-            );
-          }, 1000);
         }
       } catch (error) {
         updateStatus("エラーが発生しました", "error");
