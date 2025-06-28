@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Code Formatter Browser Extension",
+  "version": "1.0.0",
+  "description": "A browser extension for formatting code.",
+  "permissions": ["activeTab", "scripting"],
+  "commands": {
+    "format-code": {
+      "suggested_key": {
+        "default": "Shift+Alt+F",
+        "mac": "Shift+Alt+F"
+      },
+      "description": "Format TypeScript code with Prettier"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

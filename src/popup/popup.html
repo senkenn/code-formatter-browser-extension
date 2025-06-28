@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Code Formatter</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>🚀 Code Formatter</h1>
+      <p class="description">TypeScriptコードをPrettierでフォーマット</p>
+
+      <div class="shortcut-info">
+        <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd>
+        <span>でフォーマット実行</span>
+      </div>
+      <button id="formatButton" class="format-btn">
+        📝 選択されたコードをフォーマット
+      </button>
+
+      <div id="status" class="status info">準備完了</div>
+
+      <div class="instructions">
+        <h3>使い方:</h3>
+        <ul>
+          <li>ページ上のコードを選択</li>
+          <li><kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> を押す</li>
+          <li>または、このボタンをクリック</li>
+        </ul>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
