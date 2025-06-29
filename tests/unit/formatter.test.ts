@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatCode } from "../lib/formatter";
+import { formatCode } from "../../lib/formatter";
 
 describe("formatCode", () => {
   it("should format TypeScript code correctly", async () => {

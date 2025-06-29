@@ -3,3 +3,18 @@ dist/
 .vscode/
 .wxt
 .output
+
+# Test outputs
+test-results/
+playwright-report/
+coverage/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

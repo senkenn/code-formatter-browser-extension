@@ -12,8 +12,13 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:unit:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test": "pnpm test:unit",
+    "test:all": "pnpm test:unit && pnpm test:e2e",
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "format": "biome format --write"
@@ -23,8 +28,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
+    "@playwright/test": "^1.53.1",
     "@types/chrome": "^0.0.327",
     "@vitest/ui": "^3.2.4",
+    "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",
     "wxt": "^0.20.7"
